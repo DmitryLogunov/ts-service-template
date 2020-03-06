@@ -1,0 +1,11 @@
+{
+  "info": "text",
+  "some_numeric_property": "number",
+  "relationships_first_id": "number",
+  "relationships_first_type_id": "dictionaries.resource_type",
+  "relationships_second_id": "number",
+  "created_at": "date-time",
+  "created_by": "number",
+  "updated_at": "date-time",
+  "updated_by": "number"
+}

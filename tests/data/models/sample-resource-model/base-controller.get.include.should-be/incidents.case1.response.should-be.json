@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "available_includes": ["relationships_first.dictionaries", "relationships_first.incidents", "relationships_second"],
+    "count": 4
+  },
+  "links": { "self": "/?include=relationships_first.incidents&page[number]=1&page[size]=100" },
+  "data": [
+    {
+      "id": "1",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test1",
+        "created_at": "2019-05-01 12:00:00",
+        "updated_at": "2019-05-01 11:00:00",
+        "some_numeric_property": "1"
+      },
+      "relationships": {
+        "relationships_first": { "data": { "id": "23", "type": "dictionaries" } },
+        "relationships_second": { "data": { "id": "73", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "1", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "2",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test2",
+        "created_at": "2019-05-01 12:00:00",
+        "updated_at": "2019-05-01 12:00:00",
+        "some_numeric_property": "5"
+      },
+      "relationships": {
+        "relationships_first": { "data": { "id": "1", "type": "accounts" } },
+        "relationships_second": { "data": { "id": "75", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "2", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "3",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test3",
+        "created_at": "2019-05-02 14:00:00",
+        "updated_at": "2019-05-01 13:00:00",
+        "some_numeric_property": "10"
+      },
+      "relationships": {
+        "relationships_first": { "data": { "id": "56", "type": "incidents" } },
+        "relationships_second": { "data": { "id": "73", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "3", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "4",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test4",
+        "created_at": "2019-05-04 12:00:00",
+        "updated_at": "2019-05-01 14:00:00",
+        "some_numeric_property": "30"
+      },
+      "relationships": {
+        "relationships_first": { "data": { "id": "78", "type": "dictionaries" } },
+        "relationships_second": { "data": { "id": "75", "type": "dictionaries" } },
+        "created_by": { "data": null },
+        "updated_by": { "data": null }
+      }
+    }
+  ],
+  "included": [
+    [],
+    [],
+    [
+      {
+        "attributes": {
+          "title": null,
+          "public_title": "sjc01-c01-wdb01: [10.13.28.213]: GG heartbeat more 20 min: PROBLEM: Critical",
+          "description": "Event Time (UTC): 2011.12.27 15:33:12.",
+          "resolved_at": "2011-12-28 01:38:00",
+          "resolved_eta": null,
+          "work_around": null,
+          "resolution": null
+        },
+        "id": "56",
+        "links": { "self": "/incidents/56" },
+        "type": "incidents"
+      }
+    ],
+    []
+  ]
+}

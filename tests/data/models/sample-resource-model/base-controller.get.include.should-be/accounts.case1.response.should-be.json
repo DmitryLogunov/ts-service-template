@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "available_includes": [
+      "relationships_first.accounts",
+      "relationships_first.dictionaries",
+      "relationships_second",
+      "created_by",
+      "updated_by"
+    ],
+    "count": 4
+  },
+  "links": { "self": "/?include=created_by&page[number]=1&page[size]=100" },
+  "data": [
+    {
+      "id": "1",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test1",
+        "created_at": "2019-05-01 12:00:00",
+        "updated_at": "2019-05-01 11:00:00",
+        "some_numeric_property": "1"
+      },
+      "relationships": {
+        "relationships_first": { "data": { "id": "23", "type": "dictionaries" } },
+        "relationships_second": { "data": { "id": "73", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "1", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "2",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test2",
+        "created_at": "2019-05-01 12:00:00",
+        "updated_at": "2019-05-01 12:00:00",
+        "some_numeric_property": "5"
+      },
+      "relationships": {
+        "relationships_first": { "data": { "id": "1", "type": "accounts" } },
+        "relationships_second": { "data": { "id": "75", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "2", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "3",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test3",
+        "created_at": "2019-05-02 14:00:00",
+        "updated_at": "2019-05-01 13:00:00",
+        "some_numeric_property": "10"
+      },
+      "relationships": {
+        "relationships_first": { "data": { "id": "56", "type": "incidents" } },
+        "relationships_second": { "data": { "id": "73", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "3", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "4",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test4",
+        "created_at": "2019-05-04 12:00:00",
+        "updated_at": "2019-05-01 14:00:00",
+        "some_numeric_property": "30"
+      },
+      "relationships": {
+        "relationships_first": { "data": { "id": "78", "type": "dictionaries" } },
+        "relationships_second": { "data": { "id": "75", "type": "dictionaries" } },
+        "created_by": { "data": null },
+        "updated_by": { "data": null }
+      }
+    }
+  ],
+  "included": [
+    [
+      {
+        "attributes": {
+          "login": "Imogene McGlynn.Jenkins",
+          "first_name": "Imogene McGlynn",
+          "last_name": "Jenkins",
+          "title": "Sr Director Product Management",
+          "time_zone": "America/Los_Angeles",
+          "email": "Amina.Moore55@hotmail.com",
+          "phone": "1-571-675-2850 x478",
+          "skype_id": "Imogene McGlynn.Jenkins",
+          "city": "Belmont, CA",
+          "state": "Belmont, CA",
+          "country": "US",
+          "is_active": "1",
+          "is_terminate": "0",
+          "external_id": null,
+          "created_at": null,
+          "updated_at": null
+        },
+        "id": "1",
+        "links": { "self": "/accounts/1" },
+        "type": "accounts"
+      }
+    ],
+    [
+      {
+        "attributes": {
+          "login": "Grayce Bahringer.Hintz",
+          "first_name": "Grayce Bahringer",
+          "last_name": "Hintz",
+          "title": "Sr Director Product Management",
+          "time_zone": "America/Los_Angeles",
+          "email": "Joseph_Maggio51@gmail.com",
+          "phone": "1-986-065-4298 x9447",
+          "skype_id": "Grayce Bahringer.Hintz",
+          "city": "Belmont, CA",
+          "state": "Belmont, CA",
+          "country": "US",
+          "is_active": "1",
+          "is_terminate": "0",
+          "external_id": null,
+          "created_at": null,
+          "updated_at": null
+        },
+        "id": "2",
+        "links": { "self": "/accounts/2" },
+        "type": "accounts"
+      }
+    ],
+    [
+      {
+        "attributes": {
+          "login": "Robin Kessler V.Reichel",
+          "first_name": "Robin Kessler V",
+          "last_name": "Reichel",
+          "title": "Sr Director Product Management",
+          "time_zone": "America/Los_Angeles",
+          "email": "Elise39@hotmail.com",
+          "phone": "1-358-984-0038 x87636",
+          "skype_id": "Robin Kessler V.Reichel",
+          "city": "Belmont, CA",
+          "state": "Belmont, CA",
+          "country": "US",
+          "is_active": "1",
+          "is_terminate": "0",
+          "external_id": null,
+          "created_at": null,
+          "updated_at": null
+        },
+        "id": "3",
+        "links": { "self": "/accounts/3" },
+        "type": "accounts"
+      }
+    ],
+    []
+  ]
+}

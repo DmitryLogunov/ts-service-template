@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "available_includes": [
+      "relationships_first.accounts",
+      "relationships_first.dictionaries",
+      "relationships_second",
+      "created_by",
+      "updated_by"
+    ],
+    "count": 1
+  },
+  "links": {
+    "self": "/?filter[relationships_first.type]=incidents&filter[relationships_second.id]=73&include=relationships_first.dictionaries,relationships_second,created_by&page[number]=1&page[size]=100"
+  },
+  "data": [   
+    {
+      "id": "3",
+      "type": "sample-resource",
+      "attributes": {
+        "info": "test3",
+        "created_at": "2019-05-02 14:00:00",
+        "updated_at": "2019-05-01 13:00:00",
+        "some_numeric_property": "10"
+      },
+      "relationships": {
+        "relationships_first": {
+          "data": {
+            "id": "56",
+            "type": "incidents"
+          }
+        },
+        "relationships_second": {
+          "data": {
+            "id": "73",
+            "type": "dictionaries"
+          }
+        },
+        "created_by": {
+          "data": {
+            "id": "3",
+            "type": "accounts"
+          }
+        },
+        "updated_by": {
+          "data": null
+        }
+      }
+    }
+  ],
+  "included": [    
+    [
+      {
+        "attributes": {
+          "name": null,
+          "title": "comment",
+          "description": "Comment",
+          "type": "comment_type"
+        },
+        "id": "73",
+        "links": {
+          "self": "/dictionaries/73"
+        },
+        "type": "dictionaries"
+      },
+      {
+        "attributes": {
+          "login": "Robin Kessler V.Reichel",
+          "first_name": "Robin Kessler V",
+          "last_name": "Reichel",
+          "title": "Sr Director Product Management",
+          "time_zone": "America/Los_Angeles",
+          "email": "Elise39@hotmail.com",
+          "phone": "1-358-984-0038 x87636",
+          "skype_id": "Robin Kessler V.Reichel",
+          "city": "Belmont, CA",
+          "state": "Belmont, CA",
+          "country": "US",
+          "is_active": "1",
+          "is_terminate": "0",
+          "external_id": null,
+          "created_at": null,
+          "updated_at": null
+        },
+        "id": "3",
+        "links": {
+          "self": "/accounts/3"
+        },
+        "type": "accounts"
+      }
+    ]
+  ]
+}

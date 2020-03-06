@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$comment": "JSON Schema for resource",
+  "$id": "resource",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "context_type_id",
+    "context_id"
+  ],
+  "attributes": [
+    "title",
+    "created_at",
+    "updated_at"
+  ],
+  "relationships": {
+    "created_by": {
+      "relation_table": "accounts",
+      "id_column": "created_by"
+    },
+    "updated_by": {
+      "relation_table": "accounts",
+      "id_column": "updated_by"
+    },
+    "context": {
+      "relation_table": "dictionaries",
+      "resource_column": "context_type_id",
+      "id_column": "context_id"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "integer"
+      ],
+      "primary": true,
+      "pattern": "^[\\d]+$"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "context_type_id": {
+      "type": [
+        "string",
+        "integer"
+      ],
+      "pattern": "^[\\d]+$"
+    },
+    "context_id": {
+      "type": [
+        "string",
+        "integer"
+      ],
+      "pattern": "^[\\d]+$"
+    },
+    "created_at": {
+      "type": "string",
+      "default": "CURRENT_TIMESTAMP"
+    },
+    "created_by": {
+      "type": [
+        "string",
+        "integer"
+      ],
+      "pattern": "^[\\d]+$"
+    },
+    "updated_at": {
+      "type": "string",
+      "default": "CURRENT_TIMESTAMP"
+    },
+    "updated_by": {
+      "type": [
+        "string",
+        "integer"
+      ],
+      "pattern": "^[\\d]+$"
+    }
+  }
+}

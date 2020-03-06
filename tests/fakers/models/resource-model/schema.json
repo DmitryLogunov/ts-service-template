@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "attributes": [
+    "info",
+    "some_numeric_property",
+    "created_at",
+    "updated_at"
+  ],
+  "required": [
+    "info"
+  ],
+  "relationships": {
+    "relationships_first": {
+      "relation_table": "dictionaries",
+      "resource_column": "relationships_first_type_id",
+      "id_column": "relationships_first_id"
+    },
+    "relationships_second": {
+      "relation_table": "dictionaries",
+      "id_column": "relationships_second_id"
+    },
+    "created_by": {
+      "relation_table": "accounts",
+      "id_column": "created_by"
+    },
+    "updated_by": {
+      "relation_table": "accounts",
+      "id_column": "updated_by"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "primary": true
+    },
+    "info": {
+      "type": "string"
+    },
+    "some_numeric_property": {
+      "type": [
+        "string",
+        "number"
+      ],
+      "primary": true,
+      "alias": {
+        "field_name": "some_numeric_property_alias"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "alias": {
+        "fieldName": "create_start_date"
+      }
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "updated_by": {
+      "type": "string"
+    },
+    "relationships_first_type_id": {
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "relationships_first_id": {
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "relationships_second_id": {
+      "type": [
+        "string",
+        "number"
+      ]
+    }
+  }
+}

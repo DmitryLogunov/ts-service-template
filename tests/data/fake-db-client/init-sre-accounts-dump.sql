@@ -1,0 +1,27 @@
+CREATE TABLE `accounts` ( 
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  `external_id` Int( 11 ) NULL, 
+  `account_type_id` Int( 11 ) NULL,
+	`login` VarChar( 100 ) NULL,
+	`first_name` VarChar( 100 ) NULL,
+	`last_name` VarChar( 100 ) NULL,
+	`title` VarChar( 255 ) NULL,
+	`time_zone` VarChar( 100 ) NULL,
+	`email` VarChar( 255 ) NULL,
+	`phone` VarChar( 255 ) NULL,
+	`skype_id` VarChar( 255 ) NULL,
+	`city` VarChar( 70 ) NULL,
+	`state` VarChar( 70 ) NULL,
+	`country` VarChar( 70 ) NULL,
+	`is_active` VarChar( 1 )  DEFAULT '0',
+	`is_terminate` VarChar( 1 )  DEFAULT '0',
+	`created_at` DateTime NULL DEFAULT CURRENT_TIMESTAMP,
+	`created_by` Int( 11 ) NULL,
+	`updated_at` DateTime NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_by` Int( 11 ) NULL,
+	`source_table` VarChar( 255 )  NULL,
+	`source_id` Int( 11 ) NULL,
+	`double_table` VarChar( 255 )  NULL,
+	`double_id` Int( 11 ) NULL
+	)
+;

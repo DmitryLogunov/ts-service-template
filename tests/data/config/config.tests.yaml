@@ -1,0 +1,35 @@
+port: 80
+
+resource: 'test_resource'
+
+reqGuidHeader: 'request-id'
+defaultLimit: 100
+
+logSettings:
+  level: 'debug'
+  format: 1 # 1 - simple, 2 - json
+  colorize: true
+
+dbSettings:
+  host: 'localhost'
+  user: 'user'
+  password: 'password'
+  port: '3306'
+  connectionLimit: 100
+
+relationships:
+  -
+    name: "dictionaries"
+    table: 'dictionaries'
+  - 
+    name: 'accounts'
+    table: 'accounts'  
+
+resources:
+  -    
+    name: 'test_resource'
+    prefix: 'test_resource' 
+    methods: [ 'GET', 'POST', 'PATCH', 'DELETE' ]
+    tables:
+      mainTable: 'test_table'
+      actionTable: 'test_table' 

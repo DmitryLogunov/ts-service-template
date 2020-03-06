@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "port",
+    "reqGuidHeader",
+    "defaultLimit",
+    "logSettings",
+    "dbSettings",
+    "resources"
+  ],
+  "properties": {
+    "port": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "string"
+    },
+    "reqGuidHeader": {
+      "type": "string"
+    },
+    "defaultLimit": {
+      "type": "integer"
+    },
+    "logSettings": {
+      "$ref": "#/definitions/logSettings"
+    },
+    "dbSettings": {
+      "$ref": "#/definitions/dbSettings"
+    },
+    "resources": {
+      "$ref": "#/definitions/resources"
+    }
+  },
+  "definitions": {
+    "logSettings": {
+      "type": "object",
+      "required": [
+        "level",
+        "format",
+        "colorize"
+      ],
+      "properties": {
+        "level": {
+          "type": "string"
+        },
+        "format": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
+        },
+        "colorize": {
+          "type": "boolean"
+        }
+      }
+    },
+    "dbSettings": {
+      "type": "object",
+      "required": [
+        "host",
+        "user",
+        "password",
+        "port",
+        "connectionLimit"
+      ],
+      "properties": {
+        "host": {
+          "type": "string"
+        },
+        "user": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "port": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "connectionLimit": {
+          "type": "integer"
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "table"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "table": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "prefix",
+          "tables"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "prefix": {
+            "type": "string"
+          },
+          "methods": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tables": {
+            "type": "object",
+            "required": [
+              "mainTable",
+              "actionTable"
+            ],
+            "properties": {
+              "mainTable": {
+                "type": "string"
+              },
+              "actionTable": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+strategy: 'memory' # 'file' | 'memory'
+sqliteFile: 'tests/sqlite/db-tests.sqlite'
+deleteBeforeAll: 1 # 1 - delete, 0 - not delete (add  datetime suffix)
+deleteAfterAll: 1 # 1 - delete, 0 - not delete

@@ -1,0 +1,86 @@
+{
+  "meta": { "available_includes": ["relationships_first.dictionaries", "relationships_second"], "count": 4 },
+  "links": {
+    "self": "/?fields=info,some_numeric_property,relationships_second.title,relationships_second.type&include=relationships_second&page[number]=1&page[size]=100"
+  },
+  "data": [
+    {
+      "id": "1",
+      "type": "sample-resource",
+      "attributes": { "info": "test1", "some_numeric_property": "1" },
+      "relationships": {
+        "relationships_first": { "data": { "id": "23", "type": "dictionaries" } },
+        "relationships_second": { "data": { "id": "73", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "1", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "2",
+      "type": "sample-resource",
+      "attributes": { "info": "test2", "some_numeric_property": "5" },
+      "relationships": {
+        "relationships_first": { "data": { "id": "1", "type": "accounts" } },
+        "relationships_second": { "data": { "id": "75", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "2", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "3",
+      "type": "sample-resource",
+      "attributes": { "info": "test3", "some_numeric_property": "10" },
+      "relationships": {
+        "relationships_first": { "data": { "id": "56", "type": "incidents" } },
+        "relationships_second": { "data": { "id": "73", "type": "dictionaries" } },
+        "created_by": { "data": { "id": "3", "type": "accounts" } },
+        "updated_by": { "data": null }
+      }
+    },
+    {
+      "id": "4",
+      "type": "sample-resource",
+      "attributes": { "info": "test4", "some_numeric_property": "30" },
+      "relationships": {
+        "relationships_first": { "data": { "id": "78", "type": "dictionaries" } },
+        "relationships_second": { "data": { "id": "75", "type": "dictionaries" } },
+        "created_by": { "data": null },
+        "updated_by": { "data": null }
+      }
+    }
+  ],
+  "included": [
+    [
+      {
+        "attributes": { "title": "comment", "type": "comment_type" },
+        "id": "73",
+        "links": { "self": "/dictionaries/73" },
+        "type": "dictionaries"
+      }
+    ],
+    [
+      {
+        "attributes": { "title": "note", "type": "comment_type" },
+        "id": "75",
+        "links": { "self": "/dictionaries/75" },
+        "type": "dictionaries"
+      }
+    ],
+    [
+      {
+        "attributes": { "title": "comment", "type": "comment_type" },
+        "id": "73",
+        "links": { "self": "/dictionaries/73" },
+        "type": "dictionaries"
+      }
+    ],
+    [
+      {
+        "attributes": { "title": "note", "type": "comment_type" },
+        "id": "75",
+        "links": { "self": "/dictionaries/75" },
+        "type": "dictionaries"
+      }
+    ]
+  ]
+}

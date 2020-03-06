@@ -1,0 +1,62 @@
+{
+  "version": "1.0.1",
+  "main": "dist/src/app.js",
+  "author": "SRE",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/app.ts",
+    "start:dev": "node ./dist/src/app.js",
+    "start:debug": "node --inspect-brk ./dist/src/app.js",
+    "start": "mkdir logs; forever start -p ./ -l logs/$(date +%d-%m-%y-%T.log) dist/src/app.js --max-old-space-size=2096",
+    "stop": "forever stop dist/src/app.js",
+    "restart": "yarn stop; yarn start",
+    "build": "rm -rf ./dist && ./node_modules/typescript/bin/tsc && rm -rf ./dist/tests",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'tests/**/*.ts' && prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
+    "test": "jest --verbose",
+    "test:debug": "yarn build && node --inspect-brk node_modules/.bin/jest --runInBand",
+    "git:add": "yarn lint && yarn test --silent && git add --all",
+    "doc": "./node_modules/typedoc/bin/typedoc -out ./docs --theme node_modules/typedoc-clarity-theme/bin --includes 'mdDocs/' --readme maindoc.md"
+  },
+  "dependencies": {
+    "better-ajv-errors": "^0.6.4",
+    "bytes": "^3.1.0",
+    "is-number": "^7.0.0",
+    "js-yaml": "^3.13.1",
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-compose": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.11",
+    "module-alias": "^2.2.2",
+    "promise-mysql": "^3.3.1",
+    "stack-trace": "^0.0.10",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/faker": "^4.1.5",
+    "@types/jest": "^24.0.17",
+    "@types/koa": "^2.0.48",
+    "@types/koa-compose": "^3.2.3",
+    "@types/koa-router": "^7.0.40",
+    "@types/mysql": "^2.15.5",
+    "@types/node": "^11.13.4",
+    "faker": "^4.1.0",
+    "jest": "^24.7.1",
+    "randomstring": "^1.1.5",
+    "smid": "^0.1.1",
+    "sqlite3": "^4.0.6",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.14.2",
+    "typedoc-clarity-theme": "^1.1.0",
+    "typescript": "^3.4.2",
+    "uniqid": "^5.0.3"
+  },
+  "_moduleAliases": {
+    "@": "dist"
+  }
+}

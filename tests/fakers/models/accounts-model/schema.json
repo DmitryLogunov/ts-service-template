@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$comment": "JSON Schema for accounts table",
+  "$id": "accounts",
+  "title": "accounts",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "account_type_id",
+    "login",
+    "first_name",
+    "last_name",
+    "email",
+    "time_zone",
+    "is_active",
+    "is_terminate"
+  ],
+  "attributes": [
+    "login",
+    "first_name",
+    "last_name",
+    "title",
+    "time_zone",
+    "email",
+    "phone",
+    "skype_id",
+    "city",
+    "state",
+    "country",
+    "is_active",
+    "is_terminate",
+    "external_id",
+    "created_at",
+    "updated_at"
+  ],
+  "relationships": {
+    "account_type": {
+      "relation_table": "dictionaries",
+      "id_column": "account_type_id"
+    },
+    "created_by": {
+      "relation_table": "accounts",
+      "id_column": "created_by"
+    },
+    "updated_by": {
+      "relation_table": "accounts",
+      "id_column": "updated_by"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "primary": true,
+      "pattern": "^[\\d]+$"
+    },
+    "external_id": {
+      "type": "string"
+    },
+    "account_type_id": {
+      "type": [
+        "string",
+        "integer"
+      ],
+      "pattern": "^[\\d]+$"
+    },
+    "login": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "first_name": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "last_name": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "time_zone": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "email": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "skype_id": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "city": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "state": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "country": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "is_active": {
+      "type": "string",
+      "enum": [ "0", "1" ],
+      "default": "0"
+    },
+    "is_terminate": {
+      "type": "string",
+      "enum": [ "0", "1" ],
+      "default": "0"
+    },
+    "created_at": {
+      "type": "string",
+      "default": "CURRENT_TIMESTAMP"
+    },
+    "created_by": {
+      "type": [ "integer", "string" ]
+    },
+    "updated_at": {
+      "type": "string",
+      "default": "CURRENT_TIMESTAMP"
+    },
+    "updated_by": {
+      "type": [ "integer", "string" ]
+    },
+    "source_table": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "source_id": {
+      "type": [ "integer", "string" ]
+    },
+    "double_table": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "double_id": {
+      "type": [ "integer", "string" ]
+    }
+  }
+}

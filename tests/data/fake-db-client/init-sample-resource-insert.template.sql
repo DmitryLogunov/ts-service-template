@@ -1,0 +1,2 @@
+INSERT INTO `sample-resource` (`info`, `some_numeric_property`, `relationships_first_id`, `relationships_first_type_id`, `relationships_second_id`, `created_at`, `created_by`, `updated_at`, `updated_by`) 
+VALUES ( '{{info}}', '{{some_numeric_property}}', '{{relationships_first_id}}', '{{relationships_first_type_id}}', '{{relationships_second_id}}', '{{created_at}}', '{{created_by}}', '{{updated_at}}', '{{updated_by}}');
